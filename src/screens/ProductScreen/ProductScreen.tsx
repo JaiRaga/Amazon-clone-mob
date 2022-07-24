@@ -5,12 +5,16 @@ import product from '../../data/product';
 
 import styles from './styles';
 import QuantitySelector from '../../components/QuantitySelector';
+import Button from '../../components/Button';
 
 const ProductScreen = () => {
-  const [selectedOption, setSelectedOption] = useState(product.options ? product.options[0] : null);
-  console.log(selectedOption)
+  const [selectedOption, setSelectedOption] = useState(
+    product.options ? product.options[0] : null,
+  );
+  const [quantity, setQuantity] = useState(1);
+
   return (
-    <View>
+    <View style={styles.root}>
       <Text style={styles.title}>{product.title}</Text>
 
       {/* Image Carousel */}
@@ -18,7 +22,7 @@ const ProductScreen = () => {
       {/* Option Selector */}
       <Picker selectedValue={selectedOption} onValueChange={setSelectedOption}>
         {product.options.map(option => (
-          <Picker.Item label={option} value={option} />
+          <Picker.Item key={Date.now()} label={option} value={option} />
         ))}
       </Picker>
       {/* Price */}
@@ -33,9 +37,21 @@ const ProductScreen = () => {
       <Text style={styles.description}>{product.description}</Text>
 
       {/* Quantity selector */}
-      <QuantitySelector />
+      <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 
       {/* Button */}
+      <Button
+        text="Add to Cart"
+        onPress={() => {
+          console.warn('Add to Cart');
+        }}
+      />
+      <Button
+        text="Buy Now"
+        onPress={() => {
+          console.warn('Buy Now');
+        }}
+      />
     </View>
   );
 };

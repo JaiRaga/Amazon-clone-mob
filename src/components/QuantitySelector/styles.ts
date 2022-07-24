@@ -6,21 +6,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     borderWidth: 1,
-    borderColor: '#d1d1d1',
-    width: 100
+    borderColor: '#e3e3e3',
+    width: 130
   },
   button: {
-    width: 25,
-    height: 25,
+    width: 35,
+    height: 35,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#d1d1d1',
   },
   buttonText: {
-    color: 'black'
+    color: 'black',
+    fontSize: 18
   },
   quantity: {
     // backgroundColor: 'red'
-    color: 'black'
+    color: '#007eb9'
   }
 })
 

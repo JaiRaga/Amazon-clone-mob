@@ -6,11 +6,12 @@ import styles from './styles';
 interface ButtonProps {
   text: string;
   onPress: () => void;
+  containerStyles?: object;
 }
 
-const Button = ({text, onPress}: ButtonProps) => {
+const Button = ({text, onPress, containerStyles}: ButtonProps) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.root}>
+    <TouchableOpacity onPress={onPress} style={[styles.root, containerStyles]}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
